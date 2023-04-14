@@ -54,6 +54,7 @@ namespace test
                         coldwater = int.Parse(Console.ReadLine());
                         if (coldwater < ctmp || coldwater > 99999999)
                         {
+                            Console.WriteLine("число должно быть 8-ми значным и неменьше прошлого месяца");
                             correctInputcold = false;
                         }
                         else
@@ -65,7 +66,7 @@ namespace test
                         hotwater = int.Parse(Console.ReadLine());
                         if (hotwater < htmp || hotwater > 99999999)
                         {
-
+                            Console.WriteLine("число должно быть 8-ми значным и неменьше прошлого месяца");
                             correctInputhot = false;
                         }
                         else
@@ -73,7 +74,7 @@ namespace test
                             correctInputhot = true;
                             metersData.addDateHW(hotwater);
                         }
-                        Console.WriteLine("для завершения записи нажмите [Q]");  
+                          
                     }
                     catch (Exception)
                     {
@@ -82,9 +83,11 @@ namespace test
 
                 } while (!correctInputcold && !correctInputhot);
                 month += 1;
+                Console.WriteLine("для завершения записи нажмите [Q]");
                 key = Console.ReadKey().Key;
                 if (key == ConsoleKey.Q)
                     break;
+                Console.WriteLine();
                 Console.Clear();
             }
             month = yearMonth.январь;
